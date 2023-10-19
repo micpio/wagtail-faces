@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+ <!DOCTYPE html>
+
+{% block pagecontent %}
+
+<div class="w3-container w3-center">
+
+<a class="w3-bar-item w3-button " href={% url 'book_index'%}>back
+</a>
+
+  <div class="w3-card" ">
+  <div class="w3-card w3-text-white ww3-wide">
+
+ 	<img src=/media/{{show.image}} class="card-img-top" style=width:250px hight:300p alt="{{show.book_title}}">
+   <h4 class="w3-card w3-wide">{{show.book_title}}</h4>
+    <p class="card-text">book id: {{show.id}} </p>
+    <p class="card-text">{{show.authors}} </p>
+    <p class="card-text"><i>{{show.comment}}</i> </p>
+
+  </div>
+</div>
+</div>
+{% endblock %}

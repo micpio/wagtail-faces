@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+
+
+{%block pagecontent%}
+
+<div class='w3-container w3-text-white'>
+<h1>Search Results</h1>
+
+
+  {% for book in object_list %}
+    <div class="card" style="width:400px">
+ 	 <img src=/media/{{book.image}} class="card-img-top" style=width:250px hight:300p alt="...">
+
+
+  <div class="card-body">
+    <h4 class="card-title">{{book.book_title}}</h4>
+    <p class="card-text">book id: {{book.id}} </p>
+
+     <p class="card-text">{{book.authors}} </p>
+    <p class="card-text"><i>{{book.comment}}</i> </p>
+
+  </div>
+  </div>
+  {% endfor %}
+</div>
+<a class="w3-bar-item w3-button " href={% url 'book_index'%}>back
+
+
+
+{%endblock%}

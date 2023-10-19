@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
-    # This project
+    "book",
     "website",
     # Wagtail CRX (CodeRed Extensions)
     "coderedcms",

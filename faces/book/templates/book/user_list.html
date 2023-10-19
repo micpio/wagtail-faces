@@ -1,0 +1,52 @@
+{%extends 'base.html'%}
+{%load static%}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>{%block title%} Books Read page{%endblock%}</title>
+</head>
+
+
+  {%block pagecontent%}
+
+<div id="book-page">
+
+  <div class='w3-container w3-text-white w3-wide' >
+  <div class='w3-panel w3-red w3-wide w3-center' >
+
+    <h1><i>Collection of {{count}} books I have read.</i></h1>
+  </>
+
+</div>
+</div>
+  <table class=" w3-table-all w3-large w3-margin-left  w3-text-black w3-card-4" > <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Category</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+      <td class="w3-left"> {{ user.book_title }}</td>
+      <td> {{ user.authors }}</td>
+      <td> {{ user.category }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+		{% include "partials/paginate.html" %}
+
+<br>
+  <p>Search by Author</p>
+
+  <form action="{% url 'search_results' %}" method="get">
+    <input name="q" type="text" placeholder="Author ">
+  </form>
+  <br>
+  <br>
+
+
+
+	{%endblock%}

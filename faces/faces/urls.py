@@ -5,11 +5,13 @@ from wagtail.documents import urls as wagtaildocs_urls
 from coderedcms import admin_urls as crx_admin_urls
 from coderedcms import search_urls as crx_search_urls
 from coderedcms import urls as crx_urls
-
+import book
 urlpatterns = [
     # Admin
     path("django-admin/", admin.site.urls),
     path("admin/", include(crx_admin_urls)),
+    path("book/",include("book.urls")),
+
     # Documents
     path("docs/", include(wagtaildocs_urls)),
     # Search

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block pagecontent %}
+
+
+
+
+<a class="w3-bar-item w3-button " href={% url 'index'%}>back
+</a>
+  <div class="card" style="width:400px">
+  <div class="card-body">
+
+ 	<img src=/media/{post.images} class="card-img-top" style=width:250px hight:300p alt="...">
+
+    <h4 class="card-title">{{post.book_title}}</h4>
+    <p class="card-text">book id: {{post.id}} </p>
+    <p class="card-text">book id: {{post}} </p>
+    <p class="card-text">{{post.authors}} </p>
+    <p class="card-text"><i>{{post.comment}}</i> </p>
+
+  </div>
+</div>
+
+
+{% endblock %}
